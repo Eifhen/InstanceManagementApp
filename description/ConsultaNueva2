@@ -1,0 +1,1 @@
+{"NombreConsulta":"ConsultaNueva2","Descripcion":"esta consulta es nueva","Fecha":"2019-11-12","Consulta":"insert into publicaciones(Comentario) values('Writing');"}

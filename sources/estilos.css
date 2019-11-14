@@ -1,0 +1,22 @@
+.sidebar{
+		 padding:10px;
+		 color:orange;
+		 background:#585858;
+		 width:280px;
+		 height:400px;
+		 position:absolute;
+		 top:100px;
+		 left:30px;
+	 }
+
+
+.sidebarRight{
+		 padding:10px;
+		 color:orange;
+		 background:#585858;
+		 width:280px;
+		 height:400px;
+		 position:absolute;
+		 top:100px;
+		 left:1020px;
+	 }
