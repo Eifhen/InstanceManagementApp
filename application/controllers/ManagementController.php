@@ -14,6 +14,7 @@ class ManagementController extends CI_Controller
 	public function index()
 	{
 		$this->load->view('VST/management');
+		$this->load->view('layouts/footer');
 	}
 
 	public function Execute()
@@ -35,6 +36,11 @@ class ManagementController extends CI_Controller
 		exit();
 	}
 
+	public function showQuerys()
+	{
+		$this->load->view('VST/Querys');
+		$this->load->view('layouts/footer');
+	}
 
 } # CLASS ENDS
 ?>

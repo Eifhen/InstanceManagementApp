@@ -25,7 +25,6 @@ Class Management_model extends CI_Model
 			// conection string
 	        $conexion = new mysqli($field['InstanceHost'],$field['InstanceUser'],$field['InstancePassWord']);
 	        $conexion->select_db($field['InstanceName']);
-	        $conexion->begin_transaction();
 			$resultado = $conexion->query($sql);
 			
 			
@@ -37,10 +36,8 @@ Class Management_model extends CI_Model
 
 			$ss['flag'] = false;
 		}
-		$conexion->commit();
 		echo json_encode($ss);
 		exit();
-		
 	}
 
 	function SaveQuery()
@@ -57,9 +54,9 @@ Class Management_model extends CI_Model
         $file = fopen("description/".$field['NombreConsulta']."","w");
 		fputs($file,$json_string);
 		fclose($file);
-
 	}
 
+	
 
 } #Ends Class
  ?>

@@ -20,3 +20,25 @@
 		 top:100px;
 		 left:1020px;
 	 }
+
+.btnIcon
+{	
+
+	background-image: url(writing.png);
+	background-color:transparent;
+	background-repeat: no-repeat;
+	border:none;
+	cursor:pointer;
+	height:36px;
+	width:34px;
+
+}
+
+.vs
+{
+	visibility:hidden;
+}
+.item-copy
+{
+	visibility:visible;
+}

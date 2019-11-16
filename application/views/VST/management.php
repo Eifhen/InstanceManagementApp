@@ -17,7 +17,7 @@
 		   <h3 align = "center"> Instancias:</h3>
 		   <hr>
 			<div class= "container" align="center">
-				<select name = "instance[]" id="instance" class="selectpicker" multiple>
+				<select name = "instance[]" id="instance" class="selectpicker" multiple data-actions-box="true">
 						<!--Instancias-->
 						<?php 
 							$directorio = "files/"; //ruta actual
@@ -25,7 +25,10 @@
 		        			{
 			    				while (false !== ($file = readdir($handler)))
 			    				{
-			            			echo "<option>$file</option>";
+			    					if($file !="." && $file !='..')
+			    					{
+			            				echo "<option>$file</option>";
+			            			}
 			    				}
 			    				closedir($handler);
 							}
@@ -50,6 +53,10 @@
 				
 				<input type="button" id="btnSave" class = "btn btn-primary col-md-10" 
 				value = "Guardar Consulta" style = "margin-top:20px ;"/>
+
+				<a class = "btn btn-secondary text-white col-md-10"  
+					style = "margin-top:20px ;" 
+					href= "<?= base_url('ManagementController/showQuerys');?>">Mostrar Consultas</a>
 		   </ul>
 
 		</div>

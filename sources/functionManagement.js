@@ -27,7 +27,7 @@ function Ejecutar()
 		error: function(error)
 		{
 			var x = $('#msg').text('').removeClass();
-			var x = $('#msg').text('Error al enviar la consulta:'+error)
+			var x = $('#msg').text('Error en la instancia'+error.status)
 			.addClass('alert alert-danger').fadeIn(3000).fadeOut(3000);
 			console.log(error);
 		}
@@ -90,3 +90,4 @@ function saved(data)
     x = $('#msg').text('El fichero fue guardado Exitosamente!')
     .addClass('alert alert-success').fadeIn(3000).fadeOut(3000); 
 }
+
