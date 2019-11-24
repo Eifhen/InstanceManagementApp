@@ -1,0 +1,1 @@
+{"NombreConsulta":"Version 3.2 solo para hair","Descripcion":"","Fecha":"2019-11-22","Consulta":"alter table usuarios add estado varchar(45) default 'Activo'"}
