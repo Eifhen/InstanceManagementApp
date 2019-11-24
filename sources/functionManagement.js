@@ -27,9 +27,9 @@ function Ejecutar()
 		error: function(error)
 		{
 			var x = $('#msg').text('').removeClass();
-			var x = $('#msg').text('Error en la instancia'+error.status)
+			var x = $('#msg').text('Error en la instancia '+error.status)
 			.addClass('alert alert-danger').fadeIn(3000).fadeOut(3000);
-			console.log(error);
+			console.log(error.responseText);
 		}
 	});
 }

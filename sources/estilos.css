@@ -23,13 +23,28 @@
 
 .btnIcon
 {	
-
+	margin-top: 7px;
+	margin-left:7px;
 	background-image: url(writing.png);
 	background-color:transparent;
 	background-repeat: no-repeat;
 	border:none;
 	cursor:pointer;
 	height:36px;
+	width:34px;
+
+}
+
+.btnEdit
+{	
+	margin-top: 7px;
+	margin-left:5px;
+	background-image: url(tools.png);
+	background-color:transparent;
+	background-repeat: no-repeat;
+	border:none;
+	cursor:pointer;
+	height:33px;
 	width:34px;
 
 }
@@ -42,3 +57,10 @@
 {
 	visibility:visible;
 }
+.item-edit
+{
+	visibility:visible;
+}
+
+
+
