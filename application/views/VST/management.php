@@ -72,8 +72,8 @@
 <!-- |||||||||||||||||||||||||||  MODAL SAVE  |||||||||||||||||||||||||| -->
 
 <div id ="modalSave" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content col-md-8">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Guardar Consulta</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -82,33 +82,37 @@
       </div>
       <div class="modal-body">
         <form action="<?= base_url('');?>" method = "post" class = "form-horizontal" id="form1">
-        	<div class="form-group">
-				
-				<label class = "text-muted" 
-				style="margin-top:10px;"> Guardar como: </label>		
-				
-        		<input type="text" name="saveAs" id = "saveAs" 
-        		class ="form-control"/>
+        	<div class = "container">
+	        	<div class="form-group row">
+					<div class ="col">
+						<label class = "text-muted" 
+						style="margin-top:10px;"> Guardar como: </label>		
+						
+		        		<input type="text" name="saveAs" id = "saveAs" 
+		        		class ="form-control"/>
 
-	      		<label class = "text-muted" 
-				style="margin-top:10px;"> Descripcion: </label>		
-				
-        		<input type="text" name="inputDetails" id = "details" 
-        		class ="form-control"/>
-				
-				<label class = "text-muted" 
-				style="margin-top:10px;"> Fecha: </label>
+			      		<label class = "text-muted" 
+						style="margin-top:10px;"> Descripcion: </label>		
+						
+		        		<input type="text" name="inputDetails" id = "details" 
+		        		class ="form-control"/>
+						
+						<label class = "text-muted" 
+						style="margin-top:10px;"> Fecha: </label>
 
-        		<input type="date" name="fecha" id = "date" placeholder="Fecha" 
-        		class ="form-control"/>
-
-        		<label class = "text-muted" 
-				style="margin-top:10px;"> Squery: </label>		
-				
-        		<textarea type="text" name="queryInfo" id = "queryInfo" 
-        		class ="form-control"/>
-        		</textarea> 
-
+		        		<input type="date" name="fecha" id = "date" placeholder="Fecha" 
+		        		class ="form-control"/>	
+					</div>
+					<div class = "col">
+		        		<label class = "text-muted" 
+						style="margin-left:2px; margin-top:10px;"> Squery: </label>		
+						
+		        		<textarea type="text" name="queryInfo" id = "queryInfo" 
+		        		class ="form-control"
+		        		style="height:300px; "/>
+		        		</textarea> 
+					</div>
+	        	</div>
         	</div>
         </form>
       </div>
