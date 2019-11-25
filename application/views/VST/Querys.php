@@ -3,16 +3,16 @@
 		Saved Queries 
 </div>
 <hr>
-<div class="card col-md-9 container" id ='allData'>
-	<div id='tst'>
+<div class="card col-md-9 container" id ='allData' style="padding-bottom:5px; padding-top:20px;">
 		<div id ="msgQuery" style ="margin-top:20px;"></div>
-		<table class = "table table-bordered table-hover" id = "showData" style="margin-top:20px;">
+		<table class = " table cell-borders table-bordered" id = "showData" 
+		style=" width:100% ;margin-top:20px;">
 			<thead  id='head'>
 				<tr>
 					<th scope="col">Nombre</th>
 					<th scope="col">Descripcion</th>
 					<th scope="col">Fecha</th>
-					<th scope="col">Consulta</th>
+					<th scope="col" id='query'>Consulta</th>
 					<th scope="col">Copy</th>
 					<th scope="col">Edit</th>
 				</tr>
@@ -55,7 +55,7 @@
 			</tbody>
 		</table>
 	</div>
-</div>
+
 
 <div class ="form-control col-md-8" style="margin-top:30px; margin-left:230px;">
 	<a id= "ir" href= "<?= base_url('ManagementController/index');?>"> ir al gestor</a>

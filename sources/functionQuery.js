@@ -5,6 +5,13 @@ function ini()
 {	
 	var copy = $('#showData').on('click','.item-copy', Copy);
     var edit = $('#showData').on('click','.item-edit', Edit);
+    $('#showData').DataTable({
+        "ordering": false,
+        "info":     false,
+       
+
+    });
+
 }
 
 function Copy()
@@ -86,4 +93,6 @@ function Updated(data)
     $('#docs').load(" #docs >*");
     var x = $('#msgQuery').text('El fichero fue editado correctamente!')
     .addClass('alert alert-success').fadeIn(5000).fadeOut(5000);
+    //location.reload(true);
+
 }

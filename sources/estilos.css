@@ -62,5 +62,12 @@
 	visibility:visible;
 }
 
+td:nth-child(4) 
+{
+  display: none
+}
 
-
+#query
+{
+	 display: none
+}
