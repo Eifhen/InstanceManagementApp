@@ -1,1 +1,0 @@
-{"NombreConsulta":"Test","Descripcion":"Just a normal Comment here","Fecha":"2019-11-12","Consulta":"insert into publicacions(Comentario) values('Comentario Diferente ');"}
