@@ -5,9 +5,9 @@
 <hr>
 <div class="card col-md-9 container" id ='allData' style="padding-bottom:5px; padding-top:20px;">
 		<div id ="msgQuery" style ="margin-top:20px;"></div>
-		<table class = " table cell-borders table-bordered" id = "showData" 
-		style=" width:100% ;margin-top:20px;">
-			<thead  id='head'>
+		<table class = " table cell-borders table-bordered table-sm compact" id = "showData" 
+		style="margin-top:20px;">
+			<thead  id='head' class='thead-dark'>
 				<tr>
 					<th scope="col">Nombre</th>
 					<th scope="col">Descripcion</th>

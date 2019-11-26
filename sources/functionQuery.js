@@ -8,7 +8,7 @@ function ini()
     $('#showData').DataTable({
         "ordering": false,
         "info":     false,
-       
+        "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
 
     });
 
