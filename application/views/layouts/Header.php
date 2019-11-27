@@ -23,7 +23,7 @@
 
 
 	<script type="text/javascript" 
-	src="<?=base_url('DataTable/DataTables-1.10.20/js/jquery.dataTables.min.js');?>"></script>
+	src="<?=base_url('DataTable/DataTables-1.10.20/js/jquery.dataTables.js');?>"></script>
 
 	<script type="text/javascript" 
 	src="<?=base_url('DataTable/DataTables-1.10.20/js/dataTables.bootstrap4.min.js');?>"></script>
