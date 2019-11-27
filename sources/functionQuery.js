@@ -21,7 +21,6 @@ function ini()
 
 function mostrarDatos(data)
 {   
-    //console.log(data);
     var show = '';
     var i;
     for(i=0; i < data.length; i++)
@@ -48,8 +47,6 @@ function mostrarDatos(data)
                     "ordering": false,
                     "info":     false
                 }); 
-
-
 }
 
 
@@ -125,12 +122,13 @@ function Update()
 
 function Updated(data)
 {
-    myTable.destroy();
     $('#modalEdit').modal('hide');
     $('#formEdit')[0].reset();
     //$('#docs').load(" #docs >*");
     var x = $('#msgQuery').text('El fichero fue editado correctamente!')
     .addClass('alert alert-success').fadeIn(5000).fadeOut(5000);
-    ini();
+    myTable.clear();
+    myTable.destroy();
+    ini(); 
    
 } 
