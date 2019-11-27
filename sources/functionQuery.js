@@ -1,18 +1,57 @@
 
+var myTable;
 var x =$(document).ready(ini);
-	
+    
 function ini()
-{	
-	var copy = $('#showData').on('click','.item-copy', Copy);
+{   
+    var copy = $('#showData').on('click','.item-copy', Copy);
     var edit = $('#showData').on('click','.item-edit', Edit);
-    $('#showData').DataTable({
-        "ordering": false,
-        "info":     false,
-        "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
+    var u = GlobalUrl+'QueryController/mostrarDatos';
+    $.ajax({    
+            type:'GET',
+             url: u,
+            dataType: 'json',
+            success: mostrarDatos,
+            error: function(error)
+            {
+                console.log(error);
+            }
+        }); 
+}
 
-    });
+function mostrarDatos(data)
+{   
+    //console.log(data);
+    var show = '';
+    var i;
+    for(i=0; i < data.length; i++)
+    {
+        show += '<tr>'+
+                    '<td>'+data[i].NombreConsulta+'</td>'+
+                    '<td>'+data[i].Descripcion+'</td>'+
+                        '<td>'+data[i].Fecha+'</td>'+ 
+                        '<td>'+data[i].Consulta+'</td>'+
+                        '<td>'+
+                            '<div class="btnIcon item-copy">'+
+                                '<a class = "vs">'+data[i].Consulta+'</a>'+
+                            '</div>'+
+                        '</td>'+
+                         '<td>'+
+                            '<div type="button" class = "btnEdit item-edit">'+
+                                '<a class = "vs">'+data[i].NombreConsulta+'</a>'+
+                            '</div>'+
+                        '</td>'+
+                '</tr>';
+    }
+    $('#docs').html(show);
+    myTable =  $('#showData').DataTable({
+                    "ordering": false,
+                    "info":     false
+                }); 
+
 
 }
+
 
 function Copy()
 {	
@@ -31,9 +70,7 @@ function Edit()
 {
     $('#formEdit').attr('action',GlobalUrl+'QueryController/Editar');
     var id = $(this).children().text();
-    //alert(id);
     var u = GlobalUrl+'QueryController/Editar';
-
     $.ajax({    
             type:'GET',
             url: u,
@@ -88,11 +125,12 @@ function Update()
 
 function Updated(data)
 {
+    myTable.destroy();
     $('#modalEdit').modal('hide');
     $('#formEdit')[0].reset();
-    $('#docs').load(" #docs >*");
+    //$('#docs').load(" #docs >*");
     var x = $('#msgQuery').text('El fichero fue editado correctamente!')
     .addClass('alert alert-success').fadeIn(5000).fadeOut(5000);
-    //location.reload(true);
-
-}
+    ini();
+   
+} 

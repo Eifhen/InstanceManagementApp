@@ -7,7 +7,29 @@ Class QueryController extends CI_Controller
 		parent:: __construct();
 	}
 
+	public function mostrarDatos()
+	{
+			
+		$directorio = "description/";
+		$datos = array();
+		if ($handler = opendir($directorio))
+			{
+				while (false !== ($file = readdir($handler)))
+				{
+				    if($file !="." && $file !='..')
+				    {
+				    	$data = file_get_contents("description/".$file);
+						$field = json_decode($data, true);
+						$datos[]= $field;
+				    }
+				}
+				    closedir($handler);
+			} 
 
+		$data = json_encode($datos);
+		echo $data;
+		exit();		
+	}
 
 	public function Editar()
 	{
@@ -16,10 +38,8 @@ Class QueryController extends CI_Controller
 		$data = file_get_contents("description/".$id);
 		$field = json_decode($data, true);
 
-	
 		echo json_encode($field);
 		exit();
-
 	}
 
 	public function Update()
@@ -44,7 +64,7 @@ Class QueryController extends CI_Controller
 		fputs($file,$json_string);
 		fclose($file);
 
-		$msg['success'] = true;
+		$msg['success'] = $field;
 		echo json_encode($msg);
 		exit();
 	}

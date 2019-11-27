@@ -4,7 +4,6 @@
 </div>
 <hr>
 <div class="card col-md-9 container" id ='allData' style="padding-bottom:5px; padding-top:20px;">
-		<div id ="msgQuery" style ="margin-top:20px;"></div>
 		<table class = " table cell-borders table-bordered table-sm compact" id = "showData" 
 		style="margin-top:20px;">
 			<thead  id='head' class='thead-dark'>
@@ -18,43 +17,12 @@
 				</tr>
 			</thead>
 			<tbody id = 'docs'>
-				<?php 
-					
-					$directorio = "description/";
-					if ($handler = opendir($directorio))
-			        {
-				    	while (false !== ($file = readdir($handler)))
-				    	{
-				    		if($file !="." && $file !='..')
-				    		{
-				    			$data = file_get_contents("description/".$file);
-								$field = json_decode($data, true);
-				            	echo "<tr>
-							   			<td>".$field['NombreConsulta']."</td>
-							  		 	<td>".$field['Descripcion']."</td>
-							   			<td>".$field['Fecha']."</td>
-								        <td>".$field['Consulta']."</td>
-								        <td>
-								        	<div class='btnIcon item-copy'>
-								        		<a class ='vs'>".$field['Consulta']."</a>
-								        	</div>
-								        </td>
-								        <td>
-											<div type='button' 
-											class = 'btnEdit item-edit'>
-											<a class='vs'>".$field['NombreConsulta']."</a>
-											</div>
-								        </td>
-								      </tr>";
-
-				            }
-				    	}
-				    		closedir($handler);
-					} 
-				 ?>	
+			
 			</tbody>
 		</table>
-	</div>
+		<div id ="msgQuery" style ="margin-top:20px;"></div>
+</div>
+
 
 
 <div class ="form-control col-md-8" style="margin-top:30px; margin-left:230px;">
